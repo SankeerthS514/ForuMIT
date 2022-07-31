@@ -1,0 +1,116 @@
+
+
+body {
+  background: #333030;
+  color: #333333;
+  margin-top: 5rem;
+  font-family: 'Signika', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #f1dfdf;
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #ff9900;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #272424;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #272424;
+  padding: 10px 20px;
+  border: 1px solid #413c3c;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #f1dfdf;
+}
+
+a.article-title:hover {
+  color: #ff9900da;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+  color: #f1dfdf;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.list-group-item-dark {
+    color: #f1dfdf;
+    background-color: #303133;
+}
+
+.text-muted {
+    color: #f1dfdf!important;
+}
+
+a {
+    color: #ff9900da;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover{
+  color:#f1dfdf;
+}
+
+.requiredField{
+  color:#f1dfdf;
+  
+}
+
+.about{
+  font-size: 1rem;
+}

@@ -1,0 +1,54 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+              <a class="mr-2" href="{% url 'cat-posts' post.category %}">{{ post.category }}</a>
+            </div>
+            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content|slice:":50" }} {% if post.content|length > 50 %}...{% endif %}</p>
+          </div>
+        </article>
+    {% endfor %}
+    {% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-warning mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-warning mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-warning mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-warning mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-warning mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-warning mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+    {% endif %}
+    
+{% endblock content %}
+
+{% block content2 %}
+<div class="col-md-4 ">
+  <div class="content-section">
+    <h3>Creators!</h3>
+    <p class='text-muted'>A mini-project for the AP lab by :
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-dark">Sankeerth</li>
+      <li class="list-group-item list-group-item-dark">Varshith</li>
+      <li class="list-group-item list-group-item-dark">Shaun</li>
+    </ul>
+    </p>
+  </div>
+
+{% endblock content2 %}
